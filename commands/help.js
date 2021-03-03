@@ -16,8 +16,8 @@ exports.run = async(message, client, args) => {
     let embed = new Discord.MessageEmbed();
     embed.setColor(embedColor);
     embed.setAuthor(message.author.tag, message.author.displayAvatarURL());
-    embed.setTitle("Command List");
-    embed.setFooter('Command created by zachariapopcorn#8105 - https://discord.gg/XGGpf3q');
+    embed.setTitle("Moderation cmds list");
+    embed.setFooter('Hello world (:');
 
     let description = `There are ${client.commandList.length} commands\n\n`;
 

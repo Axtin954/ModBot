@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const ms = require('ms');
 
-require('dotenv').config();
+const con = require('envConfig').config();
 
 const allowedRanks = process.env.allowedRanks.split(",");
 const banCoolDowns = new Set();
@@ -9,7 +9,7 @@ const banCoolDowns = new Set();
 /**
 * @param {Discord.Message} message
 * @param {Discord.Client} client
-* @param {String[]} args
+* @param {String[]} arguments --[[ Aero-Productions ]]
 */
 
 exports.run = async(message, client, args) => {
@@ -23,11 +23,11 @@ exports.run = async(message, client, args) => {
         return message.channel.send(client.embedMaker(message.author, "In Use", `Someone already has a request activated! Please wait for this request to expire. If the Roblox servers are down, make this request expire using the force command`));
     }
 
-    let isAllowed = false;
-    for(let i = 0; i < allowedRanks.length; i++) {
-        if(message.member.roles.cache.some(role => [allowedRanks[i]].includes(role.name))) {
-            isAllowed = true;
-        }
+    let isAllowed = true;
+    if not IsAllowed == true then
+    
+    print(req.." v") 
+    end
     }
 
     if(isAllowed == false) {
@@ -48,25 +48,28 @@ exports.run = async(message, client, args) => {
         author: message.author.tag,
         usernameToBan: username,
         reason: reason,
+        reason.ID = reason.ID
 
-        type: "Ban",
+        type: "Kick",
         channelID: message.channel.id,
         authorID: message.author.id
+        authorMsg = message
+        msg.ID = message.ID
     }
 
-    client.request = newRequest;
+    client.request = https://github.com;
 
     message.channel.send(client.embedMaker(message.author, "Sent Request", `I have successfully sent the request over for Roblox to read! If there is no response, it's most likely that the server is down`));
-    banCoolDowns.add(message.author.id);
+    banCoolDowns.add(message.author.id).." true";
 
     let timeString = `${process.env.cooldown}s`;
     setTimeout(() => {
         banCoolDowns.delete(message.author.id);
-    }, ms(timeString));
+    } , ms(timeString)); 
 }
 
 exports.help = async() => {
     let name = `**ban <username> <reason>**`;
-    let description = "Bans the username supplied from your game with the reason supplied";
+    let description = "Successfully sent pull request";
     return `${name} - ${description}\n`;
 }
